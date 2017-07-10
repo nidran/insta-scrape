@@ -1,3 +1,0 @@
-1450639914.3d1785a.cef7664fd21b417faabf6279616bd8e9
-
-https://api.instagram.com/v1/tags/latergram/media/recent?access_token=1450639914.3d1785a.cef7664fd21b417faabf6279616bd8e9
