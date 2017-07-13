@@ -94,7 +94,7 @@ class HashTagSearch():
         print ("-----FUNCTION NAME : extract_recent_tag()------")
         print ("-----------Extracting Recent tag using extract_recent_tag() -------------\n")
         # print ("using url ", url)
-        url_string = "https://www.instagram.com/explore/tags/%s/" % tag
+        url_string = "https://www.instagram.com/explore/locations/214187383/%s/" % tag
         response = bs4.BeautifulSoup(requests.get(url_string).text, "html.parser")
 
         print ("Getting Query ID using ....")
@@ -102,10 +102,10 @@ class HashTagSearch():
 
         print ("Extract shared data . . ")
         shared_data = self.extract_shared_data(response)
-        print (shared_datax)
+        print ("-------- Shared Data-------",shared_data)
+        media=shared_data['entry_data']['LocationsPage'][0]['location']['media']
 
-        media = shared_data['entry_data']['TagPage'][0]['tag']['media']
-        # print(media)
+        print("\n -------- Media--------",media)
         posts = []
         for node in media['nodes']:
             print (node,"\n\n")
@@ -266,5 +266,5 @@ class HashTagSearchExample(HashTagSearch):
 
 if __name__ == '__main__':
     # log.basicConfig(level=log.INFO)
-    HashTagSearchExample().extract_recent_tag("food")
+    HashTagSearchExample().extract_recent_tag("goa-india")
     print (users)
